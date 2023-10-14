@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>payment</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="otp.js"></script>
+        <style>
+            body{
+                background-color: rgb(48, 111, 130);
+            }
+            *{
+                padding: 10px;
+            }
+            .user{
+                width: 95%;
+                margin: 50px;
+                justify-content: center;
+                padding-right: 50px;
+                border-collapse: collapse;
+            }
+            .content{
+                background-image: url('images.png');
+            background-size: 100%;
+            }
+            .login{
+                padding: 21px;
+                width:48%;
+                height: 400px;
+                border: 2px solid black;
+                border: none;
+                border-left-color: lightblue;
+                background-color: white;
+                float: left;
+                overflow: hidden;
+            }
+            a{
+                text-decoration: none;
+            }
+            div.username{
+                width:95%;
+                height:50px;
+                position:relative;
+                
+            }
+            .username input{
+                width:95%;
+                height:100%;
+                background: transparent;
+                border: 2px solid rgb(179, 40, 40);
+                border-radius: 10px;
+                outline:none;
+                padding:0 10px;
+                font-size:20px;
+            }
+            .username label{
+                position:absolute;
+                top:15px;
+                left:15px;
+                color:black;
+                text-transform: capitalize;
+                font-size: 18px;
+                transition: top.3s;
+                padding:0 5px;
+            }
+            .username input:focus ~ label,.username input:valid ~ label{
+                top:-9px;
+                background-color:white;
+            }
+            div.pass{
+                width:95%;
+                height:50px;
+                position:relative;
+            }
+            .pass input{
+                width:95%;
+                height:100%;
+                background: transparent;
+                border: 2px solid rgb(179, 40, 40);
+                border-radius: 10px;
+                outline:none;
+                padding:0 10px;
+                font-size:20px;
+            }
+            .pass label{
+                position:absolute;
+                top:15px;
+                left:15px;
+                color:black;
+                text-transform: capitalize;
+                font-size: 18px;
+                transition: top.3s;
+                padding:0 5px;
+            }
+            .pass input:focus ~ label,.pass input:valid ~ label{
+                top:-9px;
+                background-color:white;
+            }
+            div.submit{
+                width:95%;
+                height:50px;
+                position:relative;
+                text-align: center;
+            }
+            .submit #submit{
+                text-align: center;
+                background-color: navajowhite;
+                padding: 10px;
+                border:2px solid black;
+                border-radius: 10px;
+                width: 95%;
+
+            }
+            #submit:hover{
+                cursor: pointer;
+            }
+            .content{
+                width:47.2%;
+                height:750px;
+                padding: 15px;
+                border: 2px solid black; 
+                border-right:none;
+                float:left;
+                overflow: hidden;
+            }
+            div.entryfield{
+                width:95%;
+                height:50px;
+                position:relative;
+                
+            }
+            .entryfield input{
+                width:200px;
+                height:100%;
+                background: transparent;
+                border: 2px solid rgb(179, 40, 40);
+                border-radius: 10px;
+                outline:none;
+                padding:0 10px;
+                font-size:20px;
+            }
+            .entryfield label{
+                position:absolute;
+                top:15px;
+                left:15px;
+                color:black;
+                text-transform: capitalize;
+                font-size: 18px;
+                transition: top.3s;
+                padding:0 5px;
+            }
+            .entryfield input:focus ~ label,.entryfield input:valid ~ label{
+                top:-9px;
+                background-color:white;
+            }
+            @media only screen and (min-width:700px) {
+  .content{
+    width: 40%;
+    padding: 0;
+  }
+  .login{
+    width: 40%;
+  }
+}
+@media only screen and (max-width:500px) {
+  .user,.login,.content{
+    width: 50%;
+  }
+}
+#but:hover,#verify:hover{
+    cursor: pointer;
+}
+.bottam{
+    padding: 21px;
+                width:40%;
+                height: 250px;
+                border: 2px solid black;
+                border: none;
+                border-left-color: lightblue;
+                background-color: white;
+                float: left;
+                overflow: hidden;
+
+}
+        </style>
+
+    </head>
+    <body>
+        <div class="user">
+            <div class="content">
+
+            </div>
+            <form action="sign_verify.php" method="post">
+            <div class="login">
+                <h2>login user</h2>
+                <div class="username">
+                    <input type="email" id="email" name="email" required="" value="" >
+                    <label class="input_label" >Email</label>
+                </div>
+                <br>
+                <div class="pass" >
+                    <input type="password" id="password" name="password" required="" value="" >
+                    <label class="input_label" >password</label>
+                </div>
+                <br>
+                <a href="#">forgot password</a>
+                <br><br>
+                <div class="submit">
+                    <input type="submit" id="submit" name="submit" value="SUBMIT" onclick="validate()">
+                </div>
+                <br>
+                <a href="sign.html">Need account</a>
+                <br>
+            </form>
+        </div>
+            <div class="bottam">
+                
+                <div class="username">
+                    <input label="number" id="mobile" name="mobile" >
+                    <label class="input_label" >mobile</label>
+                </div>
+                <br>
+                <div class="entryfield">
+                    <input label="tel" id="ot" name="ot" required="" value="" hidden>
+                    <label class="input_label" hidden>Enter OTP</label>
+                </div>
+                
+                    <button onclick="otp()" id="but">GET OTP</button>
+                
+                
+                    <button onclick="verify()" id="verify" hidden>VERIFY OTP</button>
+               
+            </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#but").click(function()
+            {
+                $("#ot").show();
+                $(".input_label").show();
+                $("#verify").show();
+                $("#but").hide();
+            });
+        });
+    </script>
+ 
+    </body>
+</html>

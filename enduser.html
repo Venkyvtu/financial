@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>financial</title>
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <style>
+            html,body{
+                height: 100%;
+            }
+            header i{
+                padding: 3px;
+                float: right;
+                font-size: x-large;
+            }
+            header{
+                padding-top: 7px;
+                height: 50px;
+                background-color: #f2f2f2;
+            }
+            a{
+                display: block;
+                padding: 10px;
+                text-decoration: none;
+                color: lightslategrey;
+            }
+            .side{
+                background-color:#f2fafa;
+                width:20%;
+                height: 100%;
+                float: left;
+
+            }
+            .r_side{
+                float: left;
+                background-color:#f2f2f9;
+                width: 80%;
+                height: 100%;
+                border-bottom: none;
+
+            }
+            iframe{
+                margin:0px;
+                padding:0px;
+                border:none;
+                overflow:hidden;
+                
+            }
+            a:hover{
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <header>
+        <i class='bx bxs-user-circle' style='color:#17def5' ></i>
+        <i class='bx bxs-bell'></i>
+        <i class='bx bxs-message-alt-detail' id="pop"></i>
+    </header>
+    <body>
+        <div class="side">
+            <a onclick="document.getElementById('demo').src = 'iframe.html'"><i class='bx bxs-dashboard'> Dashboard</i></a>
+            <a onclick="document.getElementById('demo').src='companyuser.html'"><i class='far fa-building' >company_details</i></a>
+            <a onclick="document.getElementById('demo').src = 'financial_Policies.html'">financial_Policies</a>
+            <a onclick="document.getElementById('demo').src = 'policy.html'">financial_programs</a>
+            <a onclick="document.getElementById('demo').src = 'budget.html'">Budgets</a>
+            <a onclick="document.getElementById('demo').src = 'policy.html'">Policy</a>
+            <a onclick="document.getElementById('demo').src = ''">Invest</a>
+        </div>
+        <div class="r_side">
+            <iframe id="demo" src="iframe.html" width="100%" height="100%"></iframe>
+        </div>
+    </body>
+</html>

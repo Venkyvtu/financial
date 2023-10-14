@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Company Details</title>
+    <style>
+        .company-details {
+            border: 2px solid #336699;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #336699;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        button {
+            background-color: #336699;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .budgets {
+            border: 2px solid #ff9900;
+            background-color: #ffffcc;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            position: relative; 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #336699;
+            color: white;
+        }
+
+        .create-button {
+            background-color: #33cc33;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Company Details</h1>
+
+    <div class="company-details">
+        <h2>Description:</h2>
+        <p id="description">loan</p>
+
+        <h2>Established At:</h2>
+        <p id="establishedAt">04-10-2023</p>
+
+        <h2>Address:</h2>
+        <p id="address">[Insert Company Address Here]</p>
+
+        <h2>Contact Number:</h2>
+        <p id="contactNumber">[Insert Contact Number Here]</p>
+
+        <h2>Name:</h2>
+        <p id="name">ABC</p>
+
+        <h2>Created At:</h2>
+        <p id="createdAt">05-10-2023</p>
+
+        <h2>Updated At:</h2>
+        <p id="updatedAt">05-10-2023</p>
+
+        <h2>User:</h2>
+        <p id="user">bankavenkateswarlu4@gmail.com</p>
+    </div>
+
+    <button id="editButton" onclick="editValues()">Edit</button>
+    <button id="saveButton" onclick="saveDetails()">Save</button>
+
+    <div class="budgets">
+        <h1>Budgets</h1>
+        <button class="create-button" onclick="createBudget()">Create</button>
+        <table id="budgetTable">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Category 1</td>
+                    <td>$1000</td>
+                    <td>2023-10-01</td>
+                </tr>
+                <tr>
+                    <td>Category 2</td>
+                    <td>$800</td>
+                    <td>2023-10-05</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function createBudget() {
+            var table = document.getElementById("budgetTable").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+            var newCell1 = newRow.insertCell(0);
+            var newCell2 = newRow.insertCell(1);
+            var newCell3 = newRow.insertCell(2);
+
+            var categoryInput = prompt("Enter Category:");
+            var amountInput = prompt("Enter Amount:");
+            var dateInput = prompt("Enter Date (YYYY-MM-DD):");
+
+            newCell1.innerHTML = categoryInput;
+            newCell2.innerHTML = amountInput;
+            newCell3.innerHTML = dateInput;
+        }
+    </script>
+        <script>
+            function editValues() {
+                document.getElementById("description").contentEditable = true;
+                document.getElementById("establishedAt").contentEditable = true;
+                document.getElementById("address").contentEditable = true;
+                document.getElementById("contactNumber").contentEditable = true;
+                document.getElementById("name").contentEditable = true;
+                document.getElementById("createdAt").contentEditable = true;
+                document.getElementById("updatedAt").contentEditable = true;
+                document.getElementById("user").contentEditable = true;
+            }
+        </script>
+        <script>
+            const end_button = document.getElementById("saveButton");
+       end_button.addEventListener("click", function() {
+  paragraph.contentEditable = false;
+  paragraph.style.backgroundColor = "#ffe44d";
+} )
+        </script>
+</body>
+</html>

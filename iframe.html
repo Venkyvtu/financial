@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            iframe{
+                margin:0px;
+                padding:0px;
+                border:none;
+                overflow:hidden;
+            }
+            header{
+                width:100%;
+                background-color: #f2f2e4;
+                height: 25px;
+                padding: 10px;;
+            }
+            .container{
+                float:right;
+                padding: 2px;
+            }
+            .today{
+                height: 120px;
+                width: 200px;
+                padding:20px;
+                border:2px solid black;
+                border-radius: 20px;
+                border-left-color: blue;
+            }
+            .divide{
+                padding: 20px;
+            }
+            .cont{
+            width: 100%;
+            background-color:#f2f2f2;
+            height:50px;
+            text-align: center;
+            }
+            .cont label{
+                padding: 20px;
+                float: left;
+            }
+            .cont button{
+                border-radius: 10px;
+                background-color: #f2f2;
+                float: right;
+                padding: 5px;
+            }
+            .cont button:hover{
+                
+                cursor:pointer;
+            }
+            table,th,td{
+                padding: 20px;
+            }
+            table,tr{
+                width: 100%;
+                border: 1px solid #f2f2f2;
+                border-collapse: collapse;
+            }
+            .financal{
+                width:95%;
+                height:auto;
+                border: 1px solid #f2f2f2;
+                border-radius: 30px;
+                display: flex;
+                flex-direction: row;
+                overflow-x: scroll;
+                width:500;
+            }
+            th,td,tr{
+                min-width: 20px; 
+                max-width: 9.0072e+15px;
+            }
+            tbody{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <header>
+        <label for="nam" class="use">user_name</label>
+        <div class="container">
+            <div class="display-date">
+              <span id="day">day</span>,
+              <span id="daynum">00</span>
+              <span id="month">month</span>
+              <span id="year">0000</span>
+            </div>
+    </header>
+    <body>
+        <br>
+        <label><b>STATUS</b></label>
+        <br><br>
+        <div class="divide">
+        <div class="today">
+            <label>Budgets</label>
+        </div>
+        
+        </div> 
+        <div class="cont">
+            <b><label for="name">Latest Financial Policies</label></b>
+            <button>see all financial Policies</button>
+        </div>   
+        <div class="financal">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Implementation Date</th>
+                    <th>Company</th>
+                </tr>
+                <tbody class="css-0">
+                    <tr class="css-0">
+                        <td colspan="4" class="css-1yfl7i5">No Records</td>
+                    </tr>
+                </tbody>
+                
+            </table>
+        </div>
+<script>
+function updateDate() {
+  let today = new Date();
+
+  let dayName = today.getDay(),
+    dayNum = today.getDate(),
+    month = today.getMonth(),
+    year = today.getFullYear();
+
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const dayWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const IDCollection = ["day", "daynum", "month", "year"];
+  const val = [dayWeek[dayName], dayNum, months[month], year];
+  for (let i = 0; i < IDCollection.length; i++) {
+    document.getElementById(IDCollection[i]).firstChild.nodeValue = val[i];
+  }
+}
+
+updateDate();
+        </script>
+    </body>
+</html>

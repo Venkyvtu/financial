@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<htm>
+    <head>
+        <title>signin</title>
+        <style>
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color:yellowgreen
+            }
+            header{
+            background-color: yellow;
+            width: 100%;
+            padding: 30px;;
+          }
+          header div{
+            width: 100%;
+          }
+          div{
+            padding: 15px;
+          }
+          div.sign{
+            width: 300px;
+            border:2px solid black;
+            border-radius: 10px;
+          }
+          input{
+            padding: 7px;
+            border-radius: 10px;
+          }
+          input[type=submit]
+          {
+            width: 100%;
+            background-color: lightskyblue;
+          }
+
+
+        </style>
+        <script>
+                let mob=document.getElementById("num").value;
+                if(mob.length>10 ){
+                    document.getElementById('mob').innerHTML='mobile number must be 10 digit';
+                    return false;
+                }
+        </script>
+    </head>
+    <body>
+
+        </header>
+        <form action="user_info.php" method="post">
+            <div class="sign">
+                <div class="name" >
+                    <input type="name" id="name" name="name" required="" value="" >
+                    <label class="input_label" >Name</label>
+                </div>
+
+                <div class="email" >
+                    <input type="email" id="email" name="email" required="" value="" >
+                    <label class="input_label" >email</label>
+                </div>
+                <div class="mobile" >
+                    <input type="text" id="num" name="num" required="" value="" >
+                    <label class="input_label" >Phone no</label>
+                </div>
+                <div class="address" >
+                    <input type="address" id="address" name="address" required="" value="" >
+                    <label class="input_label" >address</label>
+                </div>
+                <div class="pass" >
+                    <input type="password" id="password" name="password" required="" value="" >
+                    <label class="input_label" >password</label>
+                </div>
+                <div class="submit">
+                    <input type="submit" id="submit" name="submit" value="submit">
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
