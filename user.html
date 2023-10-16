@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>payment</title>
+        <title>Login page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="otp.js"></script>
         <style>
             body{
-                background-color: rgb(48, 111, 130);
-            }
-            *{
-                padding: 10px;
-            }
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                background-image: url('Financial-Plan2.jpg');
+                background-size: 100%;
+            }   
+
             .user{
                 width: 95%;
                 margin: 50px;
@@ -19,20 +21,18 @@
                 padding-right: 50px;
                 border-collapse: collapse;
             }
-            .content{
-                background-image: url('images.png');
-            background-size: 100%;
-            }
             .login{
                 padding: 21px;
                 width:48%;
-                height: 400px;
+                height: auto;
                 border: 2px solid black;
-                border: none;
                 border-left-color: lightblue;
                 background-color: white;
-                float: left;
-                overflow: hidden;
+                border-bottom: none;
+                border-radius: 20px;
+                float:right;
+
+                text-align: center;
             }
             a{
                 text-decoration: none;
@@ -115,13 +115,16 @@
                 cursor: pointer;
             }
             .content{
-                width:47.2%;
-                height:750px;
-                padding: 15px;
+                width:40%;
+                height:550px;
                 border: 2px solid black; 
-                border-right:none;
                 float:left;
                 overflow: hidden;
+                border-radius: 10px;
+                background-image: url('https://www.brightfin.com/wp-content/uploads/2021/07/businesspeople-working-finance-accounting-analyze-financial-ITFM.jpg');
+                border:none;
+                background-size: 100%;
+                background: transparent;
             }
             div.entryfield{
                 width:95%;
@@ -153,46 +156,33 @@
                 top:-9px;
                 background-color:white;
             }
-            @media only screen and (min-width:700px) {
-  .content{
-    width: 40%;
-    padding: 0;
-  }
-  .login{
-    width: 40%;
-  }
-}
-@media only screen and (max-width:500px) {
-  .user,.login,.content{
-    width: 50%;
-  }
-}
+
+
 #but:hover,#verify:hover{
     cursor: pointer;
 }
 .bottam{
     padding: 21px;
-                width:40%;
-                height: 250px;
+                width:48%;
+                height: auto;
                 border: 2px solid black;
-                border: none;
                 border-left-color: lightblue;
                 background-color: white;
-                float: left;
                 overflow: hidden;
-
+                border-top: none;
+                border-radius: 20px;
+                float:right;
 }
         </style>
 
     </head>
     <body>
         <div class="user">
-            <div class="content">
+            <div class="content"></div>
 
-            </div>
             <form action="sign_verify.php" method="post">
             <div class="login">
-                <h2>login user</h2>
+                <h2>LOGIN</h2>
                 <div class="username">
                     <input type="email" id="email" name="email" required="" value="" >
                     <label class="input_label" >Email</label>
@@ -227,7 +217,7 @@
                 
                     <button onclick="otp()" id="but">GET OTP</button>
                 
-                
+                    <br>
                     <button onclick="verify()" id="verify" hidden>VERIFY OTP</button>
                
             </div>
