@@ -2,12 +2,17 @@
 <htm>
     <head>
         <title>signin</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             body{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color:yellowgreen
+                height: 100vh;
+                background-image: url('Financial-Plan2.jpg');
+                background-size: 100%;
+                
+                
             }
             header{
             background-color: yellow;
@@ -21,7 +26,7 @@
             padding: 15px;
           }
           div.sign{
-            width: 300px;
+            width: auto;
             border:2px solid black;
             border-radius: 10px;
           }
@@ -50,6 +55,7 @@
         </header>
         <form action="user_info.php" method="post">
             <div class="sign">
+                <h1>SIGN UP</h1>
                 <div class="name" >
                     <input type="name" id="name" name="name" required="" value="" >
                     <label class="input_label" >Name</label>
