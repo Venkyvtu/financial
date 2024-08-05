@@ -8,7 +8,7 @@ function otp(){
     var settings = {
 "async": true,
 "crossDomain": true,
-"url": `https://www.fast2sms.com/dev/bulkV2?authorization=oQwWEu7ial5nOI0rHmcvpfVCdDZUt3Pk2b8hGeBY4FXLTKg6sM7VJXe03oM4i2HlYSxOrNyzmUGRtsTC&variables_values=${l}&route=otp&numbers=${document.getElementById('mobile').value}`,
+"url": `https://www.fast2sms.com/dev/bulkV2?authorization=5vWXkUitWBCHxBoCgCHxjSbh2wiEI492L6VgK0VFxKQ1n98W8ne9zPnkRhXL&variables_values=${l}&route=otp&numbers=${document.getElementById('mobile').value}`,
 "method": "GET"
 }
 $.ajax(settings).done(function (response) {
